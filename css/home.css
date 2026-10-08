@@ -1,0 +1,186 @@
+/* ---------- Hero banner with background image ---------- */
+.hero {
+    max-width: none;            /* cancel the old 700px limit: the banner is full width */
+    margin: 0;
+    min-height: 420px;
+    padding: 60px 20px;
+
+    /* centre the text block both ways */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* fallback colour, shown if the image is missing */
+    background-color: #1b4332;
+
+    /* dark green-to-black overlay on top of the image */
+    background-image:
+        linear-gradient(rgba(88, 114, 103, 0.65), rgba(0, 0, 0, 0.65)),
+        url('../images/farm.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h2 {
+    color: #fff;
+    font-size: 2.2rem;
+    margin: 0 0 14px;
+}
+
+.hero p {
+    color: #e9f5ec;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* ---------- Smaller screens ---------- */
+@media (max-width: 480px) {
+    .hero {
+        min-height: 340px;
+        padding: 40px 16px;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+}
+
+.hero-buttons {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #2d6a4f;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #1b4332;
+}
+
+.btn-secondary {
+    background: #fff;
+    color: #2d6a4f;
+    border: 2px solid #2d6a4f;
+}
+
+.btn-secondary:hover {
+    background: #d8f3dc;
+}
+
+.stats {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    text-align: center;
+    min-width: 160px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2d6a4f;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.home-live-map {
+    max-width: 1200px;
+    margin: 20px auto 36px;
+    padding: 0 20px;
+}
+
+.home-live-map-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.home-live-map-heading h2 {
+    margin: 0 0 6px;
+    color: #1b4332;
+}
+
+.home-live-map-heading p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+.home-live-map #map {
+    height: 480px;
+    min-height: 360px;
+}
+
+.how-it-works {
+    max-width: 900px;
+    margin: 20px auto 40px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.steps {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.step {
+    flex: 1 1 220px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step p {
+    margin: 8px 0 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+@media (max-width: 480px) {
+    .home-live-map-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .home-live-map #map {
+        height: 65vh;
+        min-height: 340px;
+    }
+}

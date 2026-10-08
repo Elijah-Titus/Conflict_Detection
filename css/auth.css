@@ -1,0 +1,112 @@
+/* ==========================================================
+   Register and login pages
+   ========================================================== */
+
+.auth-container {
+    max-width: 440px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.auth-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 26px 24px;
+}
+
+.auth-card h2 {
+    margin: 0 0 6px;
+    color: #1b4332;
+}
+
+.auth-intro {
+    margin: 0 0 16px;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ---------- Form fields ---------- */
+.auth-card label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: bold;
+}
+
+.auth-card input[type="text"],
+.auth-card input[type="email"],
+.auth-card input[type="tel"],
+.auth-card input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.auth-card input:focus {
+    outline: none;
+    border-color: #2d6a4f;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.2);
+}
+
+.auth-card button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #2d6a4f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.auth-card button:hover {
+    background: #1b4332;
+}
+
+/* ---------- Messages ---------- */
+.alert {
+    padding: 12px 14px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.alert ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.alert-error {
+    background: #fde8ea;
+    color: #8c1018;
+    border: 1px solid #f5b5ba;
+}
+
+.alert-success {
+    background: #d8f3dc;
+    color: #1b4332;
+    border: 1px solid #a9dcb4;
+}
+
+/* ---------- Small text ---------- */
+.auth-note {
+    margin: 16px 0 0;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.auth-footer {
+    margin: 18px 0 0;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.auth-footer a {
+    color: #2d6a4f;
+    font-weight: bold;
+}

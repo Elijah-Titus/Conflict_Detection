@@ -1,0 +1,290 @@
+/* ==========================================================
+   Farmer area layout: top bar + sidebar + content
+   ========================================================== */
+
+/* Page background: soft green tint instead of plain white */
+.user-body {
+    background: linear-gradient(160deg, #eaf2ed 0%, #f3f7f4 100%);
+    background-attachment: fixed;
+}
+
+/* ---------- Top bar ---------- */
+.user-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 2000;               /* stays above the Leaflet map */
+    height: 56px;
+    background: linear-gradient(90deg, #1b4332, #2d6a4f);
+    color: #fff;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.user-brand {
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+.user-brand::before {
+    content: "🌾";
+    margin-right: 8px;
+}
+
+.user-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.user-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #74c69d;
+    color: #12362a;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-topbar-right a {
+    color: #d8f3dc;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.user-topbar-right a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- Layout ---------- */
+.user-layout {
+    display: flex;
+    min-height: calc(100vh - 56px);
+}
+
+/* ---------- Sidebar (dark green) ---------- */
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #1b4332 0%, #12362a 100%);
+    padding: 20px 14px;
+
+    position: sticky;
+    top: 56px;
+    align-self: flex-start;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+}
+
+.sidebar-label {
+    margin: 0 0 10px 12px;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #7fb99a;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    color: #cfe8d8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.15s, transform 0.15s;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(3px);
+}
+
+.sidebar a.active {
+    background: #d8f3dc;
+    color: #1b4332;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar-account {
+    margin-top: 12px;
+}
+
+.sidebar-account summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: #cfe8d8;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+}
+
+.sidebar-account summary::-webkit-details-marker {
+    display: none;
+}
+
+.sidebar-account summary::after {
+    content: "+";
+    margin-left: auto;
+    font-size: 1.15rem;
+}
+
+.sidebar-account[open] summary::after {
+    content: "−";
+}
+
+.sidebar-account summary:hover,
+.sidebar-account[open] summary {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-account summary:focus-visible {
+    outline: 2px solid #74c69d;
+    outline-offset: 2px;
+}
+
+.sidebar-account-panel {
+    padding: 14px 12px;
+    color: #e8f5ec;
+}
+
+.nav-icon {
+    font-size: 1.15rem;
+    width: 24px;
+    text-align: center;
+}
+
+/* ---------- Content area ---------- */
+.user-main {
+    flex: 1;
+    min-width: 0;
+    padding: 24px;
+}
+
+/* Map fills the content area, with a frame */
+.user-main #map {
+    height: calc(100vh - 56px - 48px);
+    width: 100%;
+    border-radius: 12px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- Report form inside the farmer area ---------- */
+.user-main .form-container {
+    max-width: 560px;
+    margin: 0 auto;
+    border-radius: 12px;
+    border-top: 5px solid #2d6a4f;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.user-main .form-container h2 {
+    margin-top: 0;
+    color: #1b4332;
+}
+
+.user-main .form-container input:focus,
+.user-main .form-container select:focus,
+.user-main .form-container textarea:focus {
+    outline: none;
+    border-color: #2d6a4f;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.2);
+}
+
+/* ---------- Phones: sidebar becomes a row of tabs ---------- */
+@media (max-width: 800px) {
+    .user-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 8px;
+    }
+
+    .sidebar-label {
+        display: none;
+    }
+
+    .sidebar nav {
+        display: flex;
+        gap: 6px;
+    }
+
+    .sidebar a {
+        flex: 1;
+        flex-direction: column;     /* icon above the text */
+        gap: 2px;
+        margin: 0;
+        padding: 8px 4px;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    .sidebar-account {
+        position: relative;
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .sidebar-account summary {
+        min-height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+        padding: 8px 4px;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    .sidebar-account summary::after {
+        display: none;
+    }
+
+    .sidebar-account-panel {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 10;
+        width: min(320px, calc(100vw - 16px));
+        max-height: calc(100vh - 150px);
+        overflow-y: auto;
+        background: #12362a;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .sidebar a:hover {
+        transform: none;
+    }
+
+    .user-main {
+        padding: 14px;
+    }
+
+    .user-main #map {
+        height: 70vh;
+    }
+
+    .user-name {
+        display: none;
+    }
+}
