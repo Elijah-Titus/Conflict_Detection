@@ -30,10 +30,10 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <body class="user-body admin-body">
 
 <header class="user-topbar">
-    <span class="user-brand">Conflict EWS <span class="admin-pill">ADMIN</span></span>
+    <span class="user-brand">Conflict Warning System</span>
     <div class="user-topbar-right">
-<span class="user-avatar"><?= htmlspecialchars(mb_strtoupper(mb_substr($_SESSION['admin_name'], 0, 1))) ?></span>
-<span class="user-name"><?= htmlspecialchars($_SESSION['admin_name']) ?></span>
+<span class="user-avatar"><?= htmlspecialchars(mb_strtoupper(mb_substr($_SESSION['admin_name'], 0, 1)), ENT_QUOTES, 'UTF-8') ?></span>
+<span class="user-name"><?= htmlspecialchars($_SESSION['admin_name'], ENT_QUOTES, 'UTF-8') ?></span>
         <a href="logout.php">Logout</a>
     </div>
 </header>
