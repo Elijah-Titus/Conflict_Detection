@@ -1,0 +1,102 @@
+/* ==========================================================
+   Admin login page (standalone, no site header)
+   ========================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+.admin-login-body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0d1626 0%, #14213d 50%, #274472 100%);
+}
+
+.admin-login-card {
+    width: 100%;
+    max-width: 380px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 32px 28px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border-top: 6px solid #3b6ea8;
+}
+
+.admin-login-logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #e8edf5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.admin-login-card h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #14213d;
+}
+
+.admin-login-sub {
+    margin: 4px 0 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.admin-login-card label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+.admin-login-card input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #c8d0de;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.admin-login-card input:focus {
+    outline: none;
+    border-color: #274472;
+    box-shadow: 0 0 0 3px rgba(39, 68, 114, 0.2);
+}
+
+.admin-login-card button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background: #274472;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.admin-login-card button:hover {
+    background: #14213d;
+}
+
+.admin-login-error {
+    padding: 11px 14px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    background: #fde8ea;
+    color: #8c1018;
+    border: 1px solid #f5b5ba;
+    font-size: 0.95rem;
+}

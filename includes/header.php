@@ -37,10 +37,10 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <nav class="site-nav">
     <a href="<?= $base ?>index.php" class="<?= $currentPage === 'index.php' ? 'active' : '' ?>">Home</a>
 
-    <?php if (isLoggedIn()): ?>
-        <a href="<?= $base ?>user/dashboard.php">My Dashboard</a>
-        <a href="<?= $base ?>pages/logout.php">Logout</a>
-    <?php else: ?>
+<?php if (isLoggedIn()): ?>
+    <a href="<?= $base . (isAdmin() ? 'admin/' : 'user/') ?>dashboard.php">My Dashboard</a>
+    <a href="<?= $base ?>pages/logout.php">Logout</a>
+<?php else: ?>
         <a href="<?= $base ?>pages/login.php" class="<?= $currentPage === 'login.php' ? 'active' : '' ?>">Login</a>
         <a href="<?= $base ?>pages/register.php" class="<?= $currentPage === 'register.php' ? 'active' : '' ?>">Register</a>
     <?php endif; ?>
